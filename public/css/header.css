@@ -1,0 +1,48 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 1rem 4rem;
+	background-color: rgb(250, 250, 250);
+}
+
+.logo {
+	width: 260px;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+}
+
+.container-button {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.nav a {
+	font-weight: 600;
+}
+
+.entrar, .cadastrar {
+	font-weight: 600;
+}
+
+.cadastrar {
+	color: #FF6200;
+}
+
+.cadastrar:hover {
+	color: #ff873d;
+	transition: all 0.2s ease-in;
+}
+
+.linha {
+	width: 2px;
+	height: 32px;
+	background-color: #8b8b8b;
+}
