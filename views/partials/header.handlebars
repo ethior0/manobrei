@@ -3,7 +3,7 @@
 <header class="header">
 	<div>
 		<a href="#">
-			<img class="logo" src="/assets/manobrei-logo.png" alt="Logo do Manobrei">
+			<img class="logo" src="/assets/img/manobrei-logo.png" alt="Logo do Manobrei">
 		</a>
 	</div>
 
@@ -11,11 +11,29 @@
 		<a href="">Início</a>
 		<a href="">Sobre</a>
 		<a href="">Produtos</a>
+		<a href="">Contato</a>
 	</nav>
 
-	<div class="container-button">
-		<a class="entrar" href="/login">Entrar</a>
-		<span class="linha"></span>
-		<a class="cadastrar" href="/cadastro">Cadastrar</a>
-	</div>
+	{{#if auth}}
+		<div class="container-button">
+			<div class="text-icon">
+				<i style="font-size: 24px" class="ri-user-line"></i>
+				<p class="bold">{{user.nome}}</p>
+			</div>
+			
+			<span class="linha"></span>
+
+			<a href="/logout" class="text-icon">
+				<i style="font-size: 24px" class="ri-logout-box-line"></i>
+				<p class="bold">Sair</p>
+			</a>
+		</div>
+	{{else}}
+		<div class="container-button">
+			<a class="entrar" href="/login">Entrar</a>
+			<span class="linha"></span>
+			<a class="cadastrar" href="/cadastro">Cadastrar</a>
+		</div>
+	{{/if}}
+
 </header>

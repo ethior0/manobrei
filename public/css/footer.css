@@ -6,6 +6,7 @@
 	justify-content: space-between;
 	align-items: center;
 	
+	padding: 0 4rem;
 	background-color: #174556;
 }
 
@@ -16,17 +17,61 @@
 	justify-content: space-between;
 	align-items: center;
 
-	padding: 1rem 4rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .logo {
 	width: 260px;
 }
 
+.bold {
+	font-weight: 600;
+}
+
+.link-rede-social {
+	font-size: 2rem;
+	color: #FF7824;
+}
+
+.link-rede-social:hover {
+	color: #ff873d;
+	transition: all 0.2s ease-in;
+}
+
 .linha-footer {
 	width: 100%;
 	height: 2px;
 	background-color: #FF7824;
+}
+
+.sections-footer {
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 6rem;
+
+	padding: 2rem 0;
+}
+
+.navegacao {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.navegacao h2 {
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+.navegacao a {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #72C8E8;
 }
 
 .barra {
@@ -38,8 +83,4 @@
 
 	padding: 1rem 4rem;
 	background-color: #FF7824;
-}
-
-.bold {
-	font-weight: 600;
 }

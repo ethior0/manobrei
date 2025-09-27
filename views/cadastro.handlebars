@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="/css/cadastro.css" />
+
 <div class="container">
   <!-- Lado esquerdo -->
-  <div class="left">
+  <a href="/" class="left">
     <img src="/assets/img/skatista_cadastro.png" alt="Skatista" />
-  </div>
+  </a>
   <!-- Lado direito -->
   <div class="right">
     <div class="header">
@@ -12,20 +13,23 @@
       <p>Crie sua conta</p>
     </div>
 
-    <form>
-      <label for="usuario">Email do Usuário:</label>
-      <input type="text" id="usuario" placeholder="Coloque seu email aqui" />
+    <form class="formulario-cadastro">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Ex.: Eduardo Rocha" />
 
-      <label for="telefone">Telefone Celular:</label>
-      <input type="text" id="telefone" placeholder="(13) 96753-4265" />
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Ex.: eduardoroch@gmail.com" />
 
-      <label for="nascimento">Data de Nascimento:</label>
-      <input type="text" id="nascimento" placeholder="01/10/2000" />
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" placeholder="**********" />
       <br />
       <br />
+
       <button type="submit" class="btn">CADASTRAR</button>
     </form>
 
-    <small>Já possui uma conta? <a href="#">Entre aqui!</a></small>
+    <small>Já possui uma conta? <a href="/login">Entre aqui!</a></small>
   </div>
 </div>
+
+<script type="module" src="cadastroUsuario.js"></script>
