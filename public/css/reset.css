@@ -12,11 +12,34 @@ html {
 }
 
 a {
-  color: black;
+  color: #000;
   text-decoration: none !important;
 }
 
-a:hover {
-  color: #373737;
-  transition: all 0.2s ease-in;
+a:active {
+  color: inherit;
+}
+
+h1 {
+  font-family: 'Darksht', sans-serif;
+}
+
+h2 {
+  font-family: 'Grashrock', sans-serif;
+}
+
+h3 {
+  font-family: 'Reign Beats', sans-serif;
+}
+
+h4 {
+  font-family: 'Shockwave', sans-serif;
+}
+
+h5 {
+  font-family: 'The Jacatra', sans-serif;
+}
+
+h6 {
+  font-family: 'Thrashlane', sans-serif;
 }

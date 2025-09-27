@@ -6,19 +6,24 @@ const porta = 3000;
 
 app.use(express.json());
 
-// Pastas estáticas
-app.use(express.static("model/"));
-app.use(express.static("public/"));
-app.use(express.static("controller/"));
-app.use(express.static("node_modules/"));
+// Corrigir: Servir só a pasta 'public'
+app.use(express.static("public"));
 
 // Handlebars
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
-app.set('views', './views');
+app.set("views", "./views");
 
 app.get("/", (req, res) => {
     res.render("index");
+});
+
+app.get("/cadastro", (req, res) => {
+    res.render("cadastro");
+});
+
+app.get("/login", (req, res) => {
+    res.render("login");
 });
 
 app.listen(porta, () => {

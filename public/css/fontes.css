@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Darksht';
+	src: url('/assets/fontes/Darksht.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Grashrock';
+	src: url('/assets/fontes/Grashrock.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Reign Beats';
+	src: url('/assets/fontes/Reign Beats.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Shockwave';
+	src: url('/assets/fontes/Shockwave.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'The Jacatra';
+	src: url('/assets/fontes/THE_JACATRA.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Thrashlane';
+	src: url('/assets/fontes/Thrashlane.otf') format('opentype');
+}
