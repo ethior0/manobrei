@@ -4,6 +4,8 @@ import { config } from "dotenv";
 config();
 
 export default function conexao() {
+
+  
   const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -13,4 +15,6 @@ export default function conexao() {
   });
 
   return pool;
+  
+
 };

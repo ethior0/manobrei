@@ -2,7 +2,7 @@ import express from "express";
 
 import { homeGet } from "./homeController.js"
 import { cadastroGet, cadastroPost } from "./cadastroController.js";
-import { loginGet } from "./loginController.js";
+import { loginGet, loginPost } from "./loginController.js";
 
 const route = express.Router();
 
@@ -14,6 +14,7 @@ route.post("/cadastro", cadastroPost);
 
 // Métodos de login
 route.get("/login", loginGet);
+route.post("/login", loginPost);
 
 // Sair da conta
 route.get("/logout", (req, res) => {

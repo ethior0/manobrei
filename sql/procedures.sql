@@ -1,28 +1,25 @@
 DELIMITER //
-CREATE PROCEDURE spInserir_Usuario (
-	IN c_nome VARCHAR(255),
-    IN c_email VARCHAR(255),
+CREATE PROCEDURE sp_InserirCliente (
+	IN c_nome VARCHAR(100),
+    IN c_email VARCHAR(100),
     IN c_senha VARCHAR(255),
-    IN c_telefone VARCHAR(11),
-    IN c_dataNasc DATE
+    in c_role ENUM('user', 'admin')
 )
 BEGIN
-	INSERT INTO tb_cliente (nome, email, senha, telefone, dataNasc) VALUES
-    (c_nome, c_email, c_senha, c_telefone, c_dataNasc);
+	INSERT INTO tbCliente (nome, email, senha, role) VALUES
+    (c_nome, c_email, c_senha, c_role);
 END //
 DELIMITER ;
-
 
 DELIMITER //
 CREATE PROCEDURE sp_InserirAdmin (
     IN p_email VARCHAR(100),
     IN p_senha VARCHAR(255),
-    IN p_nome VARCHAR(100),
-    IN p_telefone VARCHAR(20)
+    IN p_nome VARCHAR(100)
 )
 BEGIN
-    INSERT INTO tbAdmin (email, senha, nome, telefone)
-    VALUES (p_email, p_senha, p_nome, p_telefone);
+    INSERT INTO tbAdmin (email, senha, nome)
+    VALUES (p_email, p_senha, p_nome);
 END //
 DELIMITER ;
 

@@ -1,7 +1,6 @@
-class CadastroUsuario {
+class LoginUsuario {
   constructor() {
-    this.formularioCadastro = document.querySelector(".formulario-cadastro");
-    this.campoNome = document.getElementById("nome");
+    this.formularioLogin = document.querySelector(".formulario-login");
     this.campoEmail = document.getElementById("email");
     this.campoSenha = document.getElementById("senha");
     this.btnCadastrar = document.querySelector(".btn");
@@ -10,33 +9,30 @@ class CadastroUsuario {
   }
 
   eventos() {
-    this.formularioCadastro.addEventListener("submit", (e) => {
-      this.cadastrar(e);
+    this.formularioLogin.addEventListener("submit", (e) => {
+      this.logar(e);
     });
   }
 
-  cadastrar(e) {
+  logar(e) {
     e.preventDefault();
 
-    const nome = this.campoNome.value;
     const email = this.campoEmail.value;
     const senha = this.campoSenha.value;
-    this.limparCampos();
 
-    if(nome === "" || email === "" || senha === "") {
+    if(email === "" || senha === "") {
       Swal.fire("Erro", "Por favor, preencha os campos corretamente!", "error");
       return;
     }
 
-    axios.post("/cadastro", {
-      nome: nome,
+    axios.post("/login", {
       email: email,
       senha: senha,
     })
     .then(async (res) => {
       await Swal.fire({
-        title: "Cadastro realizado!",
-        text: "Sua conta foi cadastrada com sucesso!",
+        title: "Login realizado!",
+        text: "Você entrou com sucesso!",
         confirmButtonText: "Entendido",
         icon: "success"
       }).then((result) => {
@@ -54,10 +50,9 @@ class CadastroUsuario {
   }
 
   limparCampos() {
-    this.campoNome.value = "";
     this.campoEmail.value = "";
     this.campoSenha.value = "";
   }
 }
 
-const cadastrar = new CadastroUsuario();
+const login = new LoginUsuario();

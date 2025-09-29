@@ -1,25 +1,23 @@
 CREATE DATABASE db_manobrei
 USE db_manobrei
 
-CREATE TABLE tb_cliente (
-	idCliente INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(11) NULL,
-    dataNasc DATE NULL
-)
-
-CREATE TABLE tb_admin (
-    idAdmin INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE tbCliente (
+    id_Cliente INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(20),
-    dataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    role ENUM('user', 'admin') DEFAULT 'user'
 );
 
-CREATE TABLE tb_produto (
+CREATE TABLE tbAdmin (
+    id_Admin INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE Produto (
     id_Prod INT AUTO_INCREMENT PRIMARY KEY,
     nomeP VARCHAR(150) NOT NULL,
     descricao TEXT,
@@ -28,7 +26,7 @@ CREATE TABLE tb_produto (
     dataCadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE tb_produtoImagem (
+CREATE TABLE ProdutoImagem (
     id_Imagem INT AUTO_INCREMENT PRIMARY KEY,
     produto_id INT NOT NULL,
     url_imagem VARCHAR(255) NOT NULL, 
@@ -37,6 +35,5 @@ CREATE TABLE tb_produtoImagem (
     FOREIGN KEY (produto_id) REFERENCES Produto(id_Prod) ON DELETE CASCADE
 );
 
-
-SELECT * FROM tb_cliente
+SELECT * FROM tbCliente
 /* DROP TABLE tb_cliente */

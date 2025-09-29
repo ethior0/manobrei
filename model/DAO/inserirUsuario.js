@@ -1,18 +1,23 @@
 import conexao from "./conexao.js";
+import bcrypt from "bcrypt";
 
 export async function inserirUsuario(nome, email, senha) {
-  const query = `CALL spInserir_Usuario(?, ?, ?, NULL, NULL)`;
-  const data = [nome, email, senha];
-
-  const conn = conexao();
-
   try {
-    const [ results ] = await conn.query(query, data);
-    await conn.end();
+    const saltRounds = 12;
+    const senhaHash = await bcrypt.hash(senha, saltRounds);
 
+    const query = `CALL sp_InserirCliente(?, ?, ?, "user")`;
+    const data = [nome, email, senhaHash];
+
+
+    const pool = conexao();
+    const [results] = await pool.query(query, data);
+
+    console.log("Usuário inserido com sucesso!");
     return true;
-  } catch(err) {
-    console.error(err);
+
+  } catch (err) {
+    console.error("Erro ao inserir usuário:", err);
     return false;
   }
 }

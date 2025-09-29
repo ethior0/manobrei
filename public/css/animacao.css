@@ -1,0 +1,39 @@
+.pista {
+  position: relative;
+  /* referência pro absolute */
+  width: 100%;
+  height: 120px;
+  border-top: 3px solid #FF6200;
+  /* linha reta */
+}
+
+.pista2 {
+  position: relative;
+  /* referência pro absolute */
+  width: 100%;
+  height: 200px;
+  border-bottom: 3px solid #FF6200;
+  /* linha reta */
+}
+
+.skater__girl {
+  position: absolute;
+  top: -45px;
+  /* sobe a imagem pra colar na linha */
+  left: 0;
+  width: 50px;
+  /* ajusta o tamanho conforme necessário */
+  transition: transform 0.1s linear;
+  /* suaviza a virada */
+}
+
+.skater__girl2 {
+  position: absolute;
+  top: 155px;
+  /* sobe a imagem pra colar na linha */
+  left: 0;
+  width: 50px;
+  /* ajusta o tamanho conforme necessário */
+  transition: transform 0.1s linear;
+  /* suaviza a virada */
+}
