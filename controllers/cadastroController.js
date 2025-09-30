@@ -23,12 +23,12 @@ export const cadastroPost = async (req, res) => {
     if(resultado) {
       req.session.login = await verificarUsuario(email, senha);
 
-      res.json({ 
+      res.status(200).json({ 
         title: "Cadastro de usuário",
         message: 'Usuário cadastrado com sucesso! ✅' 
       });
     } else {
-      res.json({
+      res.status(400).json({
         title: "Erro no cadastro",
         message: 'Erro. Este e-mail já está em uso. ❌'
       });
