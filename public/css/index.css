@@ -59,6 +59,7 @@ main {
   line-height: 128px;
 }
 
+
 .home p {
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -91,5 +92,13 @@ main {
 }
 
 .card a:hover{
+ cursor: pointer;
+}
 
+.tituloProduto{
+  width: 15rem;
+}
+
+.azulPreco{
+  color: 174556;
 }

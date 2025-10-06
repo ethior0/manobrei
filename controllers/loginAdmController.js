@@ -1,7 +1,49 @@
-export const loginAdmGet = (req, res) => {
-	res.render("loginAdm");
-}  
+import { verificarUsuario } from "../model/DAO/verificarADM.js";
 
-export const loginAdmPost = (req, res) => {
-	console.log(req.body);
-} 
+export const loginGet = (req, res) => {
+  if (req.session.login) {
+    const [user] = req.session.login;
+    const msg = {
+      mensagem: "Você já está logado em uma conta!",
+      auth: true,
+    };
+    res.render("error", { msg, user: user });
+  } else {
+    res.render("login");
+  }
+};
+
+export const loginPost = async (req, res) => {
+  const { email, senha } = req.body;
+
+  try {
+    const usuario = await verificarUsuario(email, senha);
+
+    if (!usuario || usuario.length === 0) {
+      return res.status(400).json({
+        title: "Erro no login",
+        message: "E-mail ou senha inválidos. ❌",
+      });
+    }
+
+    
+    if (senha !== usuario[0].senha) {
+      return res.status(400).json({
+        title: "Erro no login",
+        message: "E-mail ou senha inválidos. ❌",
+      });
+    }
+
+    req.session.login = usuario;
+    return res.status(200).json({
+      title: "Login de usuário",
+      message: "Usuário logado com sucesso! ✅",
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      title: "Erro interno",
+      message: "Erro ao processar o login. ❌",
+    });
+  }
+};
