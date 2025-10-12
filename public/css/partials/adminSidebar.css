@@ -1,0 +1,41 @@
+.sidebar {
+  position: fixed;
+  width: 250px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  height: 100%;
+
+  padding: 2rem 0rem;
+  background-color: #174556;
+}
+
+.logo {
+  width: 200px;
+  margin: auto 0;
+}
+
+.sidebar-menu {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.sidebar-menu a {
+  width: 100%;
+  color: #FFA46C;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  
+  padding: 2rem 0;
+}
+
+.sidebar-menu a:hover {
+  background-color: #27596b;
+}

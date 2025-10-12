@@ -1,6 +1,51 @@
-<p>Estamos na tela de ADM, APENAS ADMS ENTRAM BLZ???</p>
+<link rel="stylesheet" href="/css/dashboard/dashboard.css">
 
-<img src="/assets/img/Admin.png" alt="">
-{{#each user}}
-    <p>{{this}}</p>
-{{/each}}
+{{> adminSidebar}}
+
+<div class="content">
+  <h2>Painel de Administração</h2>
+  <p>Estamos na tela de ADM — apenas administradores têm acesso.</p>
+  
+  {{#if clients}}
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+      <thead style="background-color: #f3f3f3;">
+
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Senha</th>
+          <th>Função</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each clients}}
+          <tr>
+
+            <td>{{this.id_Cliente}}</td>
+            <td>{{this.nome}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.senha}}</td>
+            <td>{{this.role}}</td>
+
+            <td>
+              <form action="/admin/editar/{{this.id_Cliente}}" method="GET" style="display: inline;">
+                <button type="submit">Editar</button>
+              </form>
+
+              <form action="/admin/deletar/{{this.id_Cliente}}" method="POST" style="display: inline;">
+                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">
+                  Excluir
+                </button>
+              </form>
+            </td>
+
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>
+

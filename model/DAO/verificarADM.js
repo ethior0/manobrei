@@ -1,6 +1,6 @@
 import conexao from "./conexao.js";
 
-export async function verificarUsuario(email, senha) {
+export async function verificarADM(email, senha) {
   const query = `SELECT * FROM tbCliente WHERE email = ?`;
   const data = [email];
 
@@ -11,13 +11,25 @@ export async function verificarUsuario(email, senha) {
 
     if(results.length > 0) {
       const usuario = results[0];
+      console.log(usuario);
+
+      if(usuario.senha !== senha) {
+        console.log("Senhas diferentes");
+        return [];
+      }
+
+      if(usuario.role !== "admin") {
+        console.log("Usuário não é ADM");
+        return [];
+      }
+
       return [usuario]; 
     } else {
       console.log("Usuário não encontrado");
       return []; 
     }
   } catch(err) {
-  console.log('Erro!', err.message);
+    console.log('Erro!', err.message);
     return err.message;
   }
 }

@@ -2,16 +2,7 @@ import bcrypt from "bcrypt";
 import { verificarUsuario } from "../model/DAO/verificarUsuario.js";
 
 export const loginGet = (req, res) => {
-  if(req.session.login) {
-    const [user] = req.session.login;
-    const msg = {
-      mensagem: "Você já está logado em uma conta!",
-      auth: true,
-    }
-    res.render("error", { msg, user: user });
-  } else {
-    res.render("login");
-  }
+  res.render("auth/login");
 }
 
 export const loginPost = async (req, res) => {

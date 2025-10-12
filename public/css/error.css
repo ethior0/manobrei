@@ -10,16 +10,21 @@ body {
 }
 
 .error-box {
-  background-color: #dadada;
+  background-color: #ffffff;
   padding: 20px 30px;
+  border: solid 1px #cecece;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 4, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 4, 0.2);
   text-align: center;
 }
 
 h1 {
   font-size: 2rem;
   margin: 0 0 10px;
+}
+
+.voltar {
+  text-decoration: underline;
 }
 
 a {
@@ -29,4 +34,8 @@ a {
 
 a:hover {
   color: #2c2c2c;
+}
+
+p {
+  margin-bottom: 1rem;
 }

@@ -2,16 +2,7 @@ import { inserirUsuario } from "../model/DAO/inserirUsuario.js";
 import { verificarUsuario } from "../model/DAO/verificarUsuario.js";
 
 export const cadastroGet = (req, res) => {
-  if(req.session.login) {
-    const [user] = req.session.login;
-    const msg = {
-      mensagem: "Você já está logado em uma conta!",
-      auth: true,
-    }
-    res.render("error", { msg, user: user });
-  } else {
-    res.render("cadastro");
-  }
+  res.render("auth/cadastro");
 }
 
 export const cadastroPost = async (req, res) => {

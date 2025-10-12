@@ -18,7 +18,7 @@ export async function verificarUsuario(email, senha) {
       return []; 
     }
   } catch(err) {
-  console.log('Erro!', err.message);
+    console.log('Erro!', err.message);
     return err.message;
   }
 }

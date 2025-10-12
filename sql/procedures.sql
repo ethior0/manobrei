@@ -12,29 +12,25 @@ END //
 DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE sp_InserirAdmin (
-    IN p_email VARCHAR(100),
-    IN p_senha VARCHAR(255),
-    IN p_nome VARCHAR(100)
+CREATE PROCEDURE sp_InserirCategoria (
+	IN c_nome VARCHAR(100)
 )
 BEGIN
-    INSERT INTO tbAdmin (email, senha, nome)
-    VALUES (p_email, p_senha, p_nome);
+	INSERT INTO tbCategorias (nome) VALUES
+    (c_nome);
 END //
 DELIMITER ;
 
-
-
 DELIMITER //
 CREATE PROCEDURE sp_InserirProduto (
-    IN p_nomeP VARCHAR(150),
+    IN p_nome VARCHAR(150),
     IN p_descricao TEXT,
     IN p_preco DECIMAL(10,2),
     IN p_tamanho VARCHAR(50)
 )
 BEGIN
-    INSERT INTO Produto (nomeP, descricao, preco, tamanho)
-    VALUES (p_nomeP, p_descricao, p_preco, p_tamanho);
+    INSERT INTO tbProduto (nome, descricao, preco, tamanho)
+    VALUES (p_nome, p_descricao, p_preco, p_tamanho);
 END //
 DELIMITER ;
 
