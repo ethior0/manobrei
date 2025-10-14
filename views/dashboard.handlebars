@@ -3,49 +3,108 @@
 {{> adminSidebar}}
 
 <div class="content">
-  <h2>Painel de Administração</h2>
-  <p>Estamos na tela de ADM — apenas administradores têm acesso.</p>
+  <div class="content-header">
+    <div class="content-header-text">
+      <h2>Painel de Administração</h2>
+      <p>Estamos na tela de ADM — apenas administradores têm acesso.</p>
+    </div>
+
+    <div class="container-button">
+			<div class="text-icon">
+				<i style="font-size: 24px" class="ri-user-line"></i>
+				<p class="bold">{{user.nome}}</p>
+			</div>
+			
+			<span class="linha"></span>
+
+			<a href="/logout" class="text-icon">
+				<i style="font-size: 24px" class="ri-logout-box-line"></i>
+				<p class="bold">Sair</p>
+			</a>
+		</div>
+  </div>
   
-  {{#if clients}}
-    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-      <thead style="background-color: #f3f3f3;">
-
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Senha</th>
-          <th>Função</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {{#each clients}}
+  
+  <div class="content-container">
+    {{#if clients}}
+      <table cellpadding="8" cellspacing="0">
+        <thead>
           <tr>
-
-            <td>{{this.id_Cliente}}</td>
-            <td>{{this.nome}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.senha}}</td>
-            <td>{{this.role}}</td>
-
-            <td>
-              <form action="/admin/editar/{{this.id_Cliente}}" method="GET" style="display: inline;">
-                <button type="submit">Editar</button>
-              </form>
-
-              <form action="/admin/deletar/{{this.id_Cliente}}" method="POST" style="display: inline;">
-                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">
-                  Excluir
-                </button>
-              </form>
-            </td>
-
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Função</th>
+            <th>Ações</th>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{/if}}
-</div>
+        </thead>
 
+        <tbody>
+          {{#each clients}}
+            <tr>
+              <td>{{this.id_Cliente}}</td>
+              <td>{{this.nome}}</td>
+              <td>{{this.email}}</td>
+              <td>{{this.senha}}</td>
+              <td>{{this.role}}</td>
+
+              <td>
+                <form action="/admin/editar/{{this.id_Cliente}}" method="GET" style="display: inline;">
+                  <button type="submit" class="btn-action editar-user">
+                    <i class="ri-edit-box-line"></i>
+                  </button>
+                </form>
+
+                <form action="/admin/deletar/{{this.id_Cliente}}" method="POST" style="display: inline;">
+                  <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')" class="btn-action excluir-user">
+                    <i class="ri-delete-bin-6-line"></i>
+                  </button>
+                </form>
+              </td>
+
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+
+    {{#if categorys}}
+      <table cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each categorys}}
+            <tr>
+              <td>{{this.id_Categoria}}</td>
+              <td>{{this.nome}}</td>
+              <td>Descrição da categoria</td>
+              <td>
+                <form action="/admin/editar/{{this.id_Categoria}}" method="GET" style="display: inline;">
+                  <button type="submit" class="btn-action editar-user">
+                    <i class="ri-edit-box-line"></i>
+                  </button>
+                </form>
+
+                <form action="/admin/deletar/{{this.id_Categoria}}" method="POST" style="display: inline;">
+                  <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')" class="btn-action excluir-user">
+                    <i class="ri-delete-bin-6-line"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      
+      <a href="" class="adicionar">Adicionar categoria</a>
+    {{/if}}
+    
+  </div>
+</div>

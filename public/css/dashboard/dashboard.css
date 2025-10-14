@@ -1,3 +1,113 @@
 .content {
+  padding: 2rem;
   margin-left: 250px;
+}
+
+.content-header-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-header-text p {
+  margin-bottom: 2rem;
+}
+
+.content-container {
+  height: 100dvw;
+  padding: 2rem;
+
+  background-color: #ffffff;
+  border: solid 1px #cecece;
+  box-shadow: 0 2px 8px rgba(0, 0, 4, 0.2);
+  border-radius: 10px;
+}
+
+.content-header {
+  display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container-button {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.linha {
+	width: 2px;
+	height: 32px;
+	background-color: #8b8b8b;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.text-icon {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.content-container table {
+	width: 100%;
+	border: solid 1px #adadad;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.content-container table thead {
+	background-color: #dcdcdc;
+}
+
+.content-container table thead, .content-container table tbody {
+	text-align: center;
+}
+
+.content-container table thead tr th {
+	padding: 0.5rem;
+}
+
+.content-container table tbody tr td {
+	padding: 0.5rem;
+}
+
+.btn-action {
+	border: none;
+	border-radius: 8px;
+	padding: 0.5rem;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn-action i {
+	width: 100%;
+	height: 100%;
+	font-size: 24px;
+}
+
+.editar-user {
+	color: #ffab10;
+	background-color: #ffe8be;
+}
+
+.editar-user:hover {
+	background-color: #ffdb99;
+}
+
+.excluir-user {
+	color: #ff4a4a;
+	background-color: #ebc5c5;
+}
+
+.excluir-user:hover {
+	background-color: #ffb4b4;
+}
+
+.adicionar {
+	width: 100%;
+	font-weight: 600;
+	text-decoration: underline;
 }

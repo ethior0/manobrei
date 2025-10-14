@@ -39,6 +39,9 @@ SELECT * FROM tbCliente;
 SELECT * FROM tbCategorias;
 SELECT * FROM tbProduto;
 
+CALL sp_InserirCliente("Admin", "admin@gmail.com", "1234", "admin");
+CALL sp_InserirCategoria("Roupas");
+
 SELECT * FROM tbCliente WHERE role = "user"
 /* DELETE FROM tbCliente WHERE email = "thigasmoreira@gmail.com" */
 /* DROP TABLE tb_cliente */
