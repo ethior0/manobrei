@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/css/dashboard/dashboard.css">
+
+{{> adminSidebar}}
+
+<div class="content">
+  {{> adminHeader}}
+  
+  <a href="" class="adicionar">Adicionar categoria</a>
+  
+  <div class="content-container">
+
+    {{#if data}}
+    <div class="table-container">
+      <table cellpadding="8" cellspacing="0">
+        
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each data}}
+            <tr>
+              <td>{{this.id_Categoria}}</td>
+              <td>{{this.nome}}</td>
+              <td>Descrição da categoria</td>
+              <td>
+                <form action="/admin/editar/{{this.id_Categoria}}" method="GET" style="display: inline;">
+                  <button type="submit" class="btn-action editar-user">
+                    <i class="ri-edit-box-line"></i>
+                  </button>
+                </form>
+
+                <form action="/admin/deletar/{{this.id_Categoria}}" method="POST" style="display: inline;">
+                  <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')" class="btn-action excluir-user">
+                    <i class="ri-delete-bin-6-line"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+    {{/if}}
+
+  </div>
+</div>

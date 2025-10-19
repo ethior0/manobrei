@@ -6,5 +6,5 @@ export const categoriasGet = async (req, res) => {
   const categorias = await selecionarCategoria();
   console.log(categorias);
 
-  res.render("dashboard", { user: user, auth: true, categorys: categorias});
+  res.render("dashboard/categorias", { user: user, auth: true, data: categorias});
 }

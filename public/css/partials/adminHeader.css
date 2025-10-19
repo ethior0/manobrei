@@ -1,0 +1,34 @@
+.content-header-text h2 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.content-header-text p {
+	margin-bottom: 2rem;
+}
+
+.content-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 2rem;
+}
+
+.linha {
+	width: 2px;
+	height: 32px;
+	background-color: #8b8b8b;
+}
+
+
+.bold {
+	font-weight: 700;
+}
+
+.text-icon {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}

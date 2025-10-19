@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/partials/adminHeader.css">
+
+<div class="content-header">
+  <div class="content-header-text">
+    <h2>Painel de Administração</h2>
+    <p>Estamos na tela de ADM — apenas administradores têm acesso.</p>
+  </div>
+
+  <div class="container-button">
+    <div class="text-icon">
+      <i style="font-size: 24px" class="ri-user-line"></i>
+      <p class="bold">{{user.nome}}</p>
+    </div>
+
+    <span class="linha"></span>
+
+    <a href="/logout" class="text-icon" id="btn-logout">
+      <i style="font-size: 24px" class="ri-logout-box-line"></i>
+      <p class="bold">Sair</p>
+    </a>
+  </div>
+</div>
+
+<script type="module" src="/js/logout.js"></script>

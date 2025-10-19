@@ -8,6 +8,7 @@ export const authAdmin = (req, res, next) => {
         auth: true,
       }
       res.render("error", { msg });	
+      return;
     }
   } else {
     const msg = {
@@ -15,6 +16,7 @@ export const authAdmin = (req, res, next) => {
       auth: false,
     }
     res.render("error", { msg });
+    return;
   }
   next();
 }

@@ -27,14 +27,4 @@ route.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-// route.get("/admin/editar/:id", (req, res) => {
-//   const idUsuario = req.params.id;
-//   res.send(`O ID do usuário a editar informações é: ${idUsuario}`);
-// });
-
-// route.post("/admin/deletar/:id", (req, res) => {
-//   const idUsuario = req.params.id;
-//   res.send(`O ID do usuário a ser deletado é: ${idUsuario}`);
-// });
-
 export default route;

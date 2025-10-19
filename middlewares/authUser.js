@@ -6,7 +6,7 @@ export const authUser = (req, res, next) => {
       auth: true,
     }
     res.render("error", { msg, user: user });
-  } else {
-    next();
+    return;
   }
+  next();
 }

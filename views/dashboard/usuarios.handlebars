@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/dashboard/dashboard.css">
+
+{{> adminSidebar}}
+
+<div class="content">
+  {{> adminHeader}}
+  
+  <div class="content-container">
+    {{#if data}}
+      <div class="table-container">
+        <table cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Senha</th>
+              <th>Função</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each data}}
+              <tr>
+                <td data-label="ID">{{this.id_Cliente}}</td>
+                <td data-label="Nome">{{this.nome}}</td>
+                <td data-label="Email">{{this.email}}</td>
+                <td data-label="Senha">{{this.senha}}</td>
+                <td data-label="Função">{{this.role}}</td>
+
+                <td data-label="Ações">
+                  <form class="form-editar" data-id="{{this.id_Cliente}}" data-nome="{{this.nome}}" data-email="{{this.email}}" style="display: inline;">
+                    <button type="submit" class="btn-action editar-user">
+                      <i class="ri-edit-box-line"></i>
+                    </button>
+                  </form>
+
+                  <form class="form-excluir" data-id="{{this.id_Cliente}}" style="display: inline;">
+                    <button type="submit" class="btn-action excluir-user">
+                      <i class="ri-delete-bin-6-line"></i>
+                    </button>
+                  </form>
+                </td>
+
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
+    
+  </div>
+</div>
+
+<script type="module" src="/js/dashboard/usuarios.js"></script>
