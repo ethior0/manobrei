@@ -13,11 +13,12 @@ DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE sp_InserirCategoria (
-	IN c_nome VARCHAR(100)
+	IN c_nome VARCHAR(100),
+    IN c_descricao VARCHAR(255)
 )
 BEGIN
-	INSERT INTO tbCategorias (nome) VALUES
-    (c_nome);
+	INSERT INTO tbCategorias (nome, descricao) VALUES
+    (c_nome, c_descricao);
 END //
 DELIMITER ;
 

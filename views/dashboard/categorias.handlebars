@@ -5,7 +5,7 @@
 <div class="content">
   {{> adminHeader}}
   
-  <a href="" class="adicionar">Adicionar categoria</a>
+  <button class="adicionar">Adicionar categoria</button>
   
   <div class="content-container">
 
@@ -25,18 +25,19 @@
         <tbody>
           {{#each data}}
             <tr>
-              <td>{{this.id_Categoria}}</td>
-              <td>{{this.nome}}</td>
-              <td>Descrição da categoria</td>
-              <td>
-                <form action="/admin/editar/{{this.id_Categoria}}" method="GET" style="display: inline;">
+              <td data-label="ID">{{this.id_Categoria}}</td>
+              <td data-label="Nome">{{this.nome}}</td>
+              <td data-label="Descrição">{{this.descricao}}</td>
+
+              <td data-label="Ações">
+                <form class="form-editar" data-id="{{this.id_Categoria}}" data-nome="{{this.nome}}" data-descricao="{{this.descricao}}" style="display: inline;">
                   <button type="submit" class="btn-action editar-user">
                     <i class="ri-edit-box-line"></i>
                   </button>
                 </form>
 
-                <form action="/admin/deletar/{{this.id_Categoria}}" method="POST" style="display: inline;">
-                  <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este usuário?')" class="btn-action excluir-user">
+                <form class="form-excluir" data-id="{{this.id_Categoria}}" style="display: inline;">
+                  <button type="submit" class="btn-action excluir-user">
                     <i class="ri-delete-bin-6-line"></i>
                   </button>
                 </form>
@@ -51,3 +52,5 @@
 
   </div>
 </div>
+
+<script type="module" src="/js/dashboard/categoria.js"></script>

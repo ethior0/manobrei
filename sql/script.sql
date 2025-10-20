@@ -11,7 +11,8 @@ CREATE TABLE tbCliente (
 
 CREATE TABLE tbCategorias (
   id_Categoria INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(100) NOT NULL
+  nome VARCHAR(100) NOT NULL,
+  descricao VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE tbProduto (
@@ -40,8 +41,4 @@ SELECT * FROM tbCategorias;
 SELECT * FROM tbProduto;
 
 CALL sp_InserirCliente("Admin", "admin@gmail.com", "1234", "admin");
-CALL sp_InserirCategoria("Roupas");
-
-SELECT * FROM tbCliente WHERE role = "user"
-/* DELETE FROM tbCliente WHERE email = "thigasmoreira@gmail.com" */
-/* DROP TABLE tb_cliente */
+CALL sp_InserirCategoria("Roupas", "Roupas e acessórios de skate");
